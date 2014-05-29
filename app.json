@@ -1,0 +1,7 @@
+{
+    "name": "Photo Masking",
+    "short_name": "photomasking",
+    "thumbnail": "http://i.imgur.com/IXNYFM2.png",
+    "description": "Photo masking application",
+    "question": "Draw the outline and/or holes of the main object in the picture"
+}
