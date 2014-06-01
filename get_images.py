@@ -14,7 +14,10 @@
 #
 # You should have received a copy of the GNU Affero General Public License
 # along with PyBOSSA.  If not, see <http://www.gnu.org/licenses/>.
+import boto
 from boto.s3.connection import S3Connection
+from boto.s3.key import Key
+import sys
 try:
     import s3_settings
 except:
@@ -34,14 +37,15 @@ def get_s3_photos(folder):
     :rtype: list
 
     """
-    conn = S3Connection('<fake access key>', '<fake secret key>', anon=True)
+    conn = S3Connection(s3_settings.ACCESS_KEY, s3_settings.SECRET)
     mybucket = conn.get_bucket(s3_settings.BUCKET)
     photos = []
-    for photo in mybucket.list(prefix=folder):
+    for photo in mybucket.list():
         if allowed_file(photo.name.lower()):
             link = dict(
                 url_b="http://%s.s3.amazonaws.com/%s" % (s3_settings.BUCKET,
                                                          photo.name)
             )
             photos.append(link)
+
     return photos
