@@ -44,8 +44,12 @@ Documentation
 
 We recommend that you read the section: [Build with PyBossa](http://docs.pybossa.com/en/latest/build_with_pybossa.html) and follow the [step by step tutorial](http://docs.pybossa.com/en/latest/user/tutorial.html).
 
-Creating the app
-================
+
+Adding pictures from a folder in an S3 bucket
+=============================================
+
+This application supports public S3 buckets. Adding pictures/photos from
+a folder in a S3 bucket is as simple as running the following commands.
 
 ```bash
     $ python createTasks.py -s server -k api-key -c -x -b  "folder/in/s3/"
@@ -53,21 +57,11 @@ Creating the app
 To add all images in the root folder run:
 
 ```bash
-    $ python createTasks.py -s server -k api-key -c -x -b  "folder/in/s3/"
+    $ python createTasks.py -s server -k api-key -c -x -b  "/"
 ```
 To add all images in a subfolder:
 ```bash
     $ python createTasks.py -s server -k api-key -c -x -b  "arreton"
-```
-
-Adding pictures from a folder in an S3 bucket
-=============================================
-
-This application supports public S3 buckets. Adding pictures/photos from
-a folder in a S3 bucket is as simple as running the following command:
-
-```bash
-    $ python createTasks.py -s server -k api-key -x -b "folder/in/s3/"
 ```
 
 If the application had already some tasks, the previous command will add
