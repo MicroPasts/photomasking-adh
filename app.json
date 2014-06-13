@@ -1,12 +1,7 @@
 {
-    "name": "Photo Masking Petrie Museum Shabti",
-    "short_name": "photomaskingPetrie",
+    "name": "Photo Masking",
+    "short_name": "photomaskingArreton",
     "thumbnail": "http://i.imgur.com/IXNYFM2.png",
-<<<<<<< HEAD
     "description": "Photo masking application",
-    "question": "Draw the outline and/or holes of the main object in the picture "
-=======
-    "description": "Photo masking application of Petrie Museum shabti",
-    "question": "Draw the outline of the main object in the picture"
->>>>>>> a7b1a24f9bca6330ec503c341bf2d20883bddca2
+    "question": "Draw the outline and/or holes of the main object in the picture"
 }
