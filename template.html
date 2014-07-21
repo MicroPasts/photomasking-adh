@@ -305,13 +305,13 @@ a.ol-full-screen-true:after {
 function loadUserProgress() {
     pybossa.userProgress('photomaskingArreton').done(function(data){
     	console.log('Number of contributed tasks: ' + data.done);
-        if ((data.done == 1) && ($.cookie('survey') === undefined)){
+        if ((data.done == 1) && ($.cookie('surveyADH') === undefined)){
            $("#survey").modal('show');
-           $.cookie('survey', 'shown', { path: '/'});
+           $.cookie('surveyADH', 'shown', { path: '/'});
         }
-        if ((data.done >= 25) && ($.cookie('survey25') === undefined)){
+        if ((data.done >= 25) && ($.cookie('survey25ADH') === undefined)){
            $("#survey25").modal('show');
-           $.cookie('survey25', 'shown', { path: '/'});
+           $.cookie('survey25ADH', 'shown', { path: '/'});
         }
         var pct = Math.round((data.done*100)/data.total);
         $("#progress").css("width", pct.toString() +"%");
