@@ -156,7 +156,7 @@ a.ol-full-screen-true:after {
         <!-- Progress bar for the user -->
         <span id="total" class="label label-inverse"></span></p>
         <div class="progress progress-striped">
-            <div id="progress" rel="tooltip" title="#" class="bar" style="width: 0%;"></div>
+            <div id="progress" rel="tooltip" title="#" class="progress-bar" style="width: 0%;"></div>
         </div>
 
         <div id="answer"> <!-- Start DIV for the submission buttons -->
@@ -304,11 +304,12 @@ a.ol-full-screen-true:after {
 <script>
 function loadUserProgress() {
     pybossa.userProgress('photomaskingArreton').done(function(data){
+    	console.log('Number of contributed tasks: ' + data.done);
         if ((data.done == 1) && ($.cookie('survey') === undefined)){
            $("#survey").modal('show');
            $.cookie('survey', 'shown', { path: '/'});
         }
-        if ((data.done == 25) && ($.cookie('survey25') === undefined)){
+        if ((data.done >= 25) && ($.cookie('survey25') === undefined)){
            $("#survey25").modal('show');
            $.cookie('survey25', 'shown', { path: '/'});
         }
